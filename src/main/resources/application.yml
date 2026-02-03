@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/stockdb
+    username: stock
+    password: stock
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        "[format_sql]": true
+  flyway:
+    enabled: true
+
+app:
+  jwt:
+    secret: "CHANGE-ME-TO-A-LONG-SECRET-AT-LEAST-32-CHARS"
+    issuer: "stock-manager"
+    expiration-minutes: 120
